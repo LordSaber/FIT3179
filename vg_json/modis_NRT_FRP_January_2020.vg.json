@@ -16,76 +16,7 @@
             }
         }
     ],
-    "title": "Visualisation on the 2019-2020 Australian Bush Fire",
     "vconcat": [
-        {
-            "width": "container",
-            "height": 200,
-            "layer": [
-                {
-                    "mark": "bar",
-                    "params": [
-                        {
-                            "name": "legend_selection",
-                            "select": {
-                                "type": "point",
-                                "fields": [
-                                    "daynight"
-                                ]
-                            },
-                            "bind": "legend"
-                        }
-                    ],
-                    "title": "Amount of fire recorded per day in January 2020",
-                    "transform": [
-                        {
-                            "filter": {
-                                "param": "legend_selection"
-                            }
-                        }
-                    ],
-                    "encoding": {
-                        "x": {
-                            "field": "acq_date",
-                            "timeUnit": "date",
-                            "axis": {
-                                "title": "Day of January 2020"
-                            }
-                        },
-                        "y": {
-                            "aggregate": "count",
-                            "axis": {
-                                "tickCount": 5,
-                                "grid": false
-                            },
-                            "title": "Count"
-                        },
-                        "color": {
-                            "field": "daynight",
-                            "type": "nominal",
-                            "scale": {
-                                "domain": [
-                                    "D",
-                                    "N"
-                                ],
-                                "range": [
-                                    "#e7ba52",
-                                    "#c7c7c7"
-                                ]
-                            },
-                            "title": "Daytime or Nighttime fire"
-                        },
-                        "tooltip": [
-                            {
-                                "field": "acq_time",
-                                "type": "nominal",
-                                "title": "Acquired Time"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
         {
             "width": "container",
             "height": 550,
