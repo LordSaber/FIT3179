@@ -18,7 +18,7 @@
     ],
     "vconcat": [
         {
-            "width": "container",
+            "width": 600,
             "height": 550,
             "title": "NASA FIRMS MODIS Total Near Real-Time Australian Bush Fires (January 2020)",
             "layer": [

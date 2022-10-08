@@ -2,46 +2,104 @@
 <html>
 
 <head>
+    <title>Multiple Visualisations | An Example</title>
     <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
-    <!-- Import vega-embed -->
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
-    <!-- CSS file -->
+    <!-- Import pure.css -->
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
         integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
 
 </head>
 
 <body>
 
-    <div class="pure-g">
-        <div class="pure-u-1-2" style="text-align: right;">
-            <h2 style="margin-top: 100px;">FIT3179 Data Visualisation</h2>
-            <h1>2019-2020 Australian Bush Fires</h1>
+    <div class="page">
+
+        <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <h1>2019-2020 Australian Bush Fires</h1>
+                <p>Description Text.</p>
+            </div>
         </div>
-        <div class="pure-u-1-2">
-            <div id="bar_chart"></div>
-        </div>
-    </div>
+        <!-- end pure grid group -->
 
-    <div id="proportional_symbol_map" style="margin-left: 250px; margin-top: 30px;"></div>
+        <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-1-3">
+                <div class="description description-left">
+                    <h2>Amount of Fire per day in January 2020</h2>
+                    <p>Bar chart with legend selection. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac
+                        feugiat
+                        sed. Egestas purus viverra accumsan in nisl. Egestas purus viverra accumsan in nisl.</p>
+                </div>
+            </div>
+            <div class="pure-u-1-3">
+                <div id="vis1" class="vis-container"></div>
+            </div>
+            <div class="pure-u-1-3" style="width: 31.5%;">
+                <div id="vis1" class="vis-container" style="margin-left: 15px;"></div>
+            </div>
+
+            <!-- pure grid group -->
+            <div class="pure-g">
+                <div class="pure-u-1-3">
+                    <div class="description description-left">
+                        <h2>Total Near Real Time Bush Fire Spread in January 2020</h2>
+                        <p>Proportional map with FRP and Brightness. Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit,
+                            sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et
+                            molestie ac
+                            feugiat
+                            sed. Egestas purus viverra accumsan in nisl. Egestas purus viverra accumsan in nisl.</p>
+                    </div>
+                </div>
+                <div class="pure-u-1-3">
+                    <div id="vis2" class="vis-container"></div>
+                </div>
+                <div class="pure-u-1-3" style="width: 31.5%;">
+                    <div id="vis2" class="vis-container" style="margin-left: 15px;"></div>
+                </div>
+
+            </div>
+            <!-- end pure grid group -->
+
+            <div class="pure-g">
+                <div class="pure-u-1-1 small-font">
+                    <p>This visualisation is created by Nuttayot Lojanapiwat. The datasource is from NASA.
+                        </href>.</p>
+                </div>
+            </div>
 
 
-    <script type="text/javascript">
+        </div> <!-- end page -->
 
-        var spec1 = "";
-        vegaEmbed('#bar_chart', spec1).then(function (result) {
-            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
+        <script type="text/javascript">
+            var specVis1 = "vg_json/bar_chart_daily_fire_January_2020.vg.json";
+            var specVis2 = "vg_json/modis_NRT_FRP_January_2020.vg.json";
 
-        var spec2 = "";
-        vegaEmbed('#proportional_symbol_map', spec2).then(function (result) {
-            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
-    </script>
+            vegaEmbed('#vis1', specVis1, { "actions": false });
 
+            vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+                // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+        </script>
 </body>
 
 </html>

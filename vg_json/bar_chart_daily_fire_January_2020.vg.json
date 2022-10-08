@@ -3,22 +3,9 @@
     "data": {
         "url": "https://raw.githubusercontent.com/LordSaber/FIT3179/Week-9-Homework/data/fire_nrt_M6_101673.csv"
     },
-    "params": [
-        {
-            "name": "Fire_Radiative_Above",
-            "value": 0,
-            "bind": {
-                "input": "range",
-                "min": 0,
-                "max": 10000,
-                "step": 200,
-                "name": "Minimum FRP: "
-            }
-        }
-    ],
     "vconcat": [
         {
-            "width": "container",
+            "width": 600,
             "height": 200,
             "layer": [
                 {
