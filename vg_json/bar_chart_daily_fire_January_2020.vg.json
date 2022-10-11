@@ -1,0 +1,76 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/LordSaber/FIT3179/Week-9-Homework/data/fire_nrt_M6_101673.csv"
+    },
+    "vconcat": [
+        {
+            "width": 600,
+            "height": 200,
+            "layer": [
+                {
+                    "mark": "bar",
+                    "params": [
+                        {
+                            "name": "legend_selection",
+                            "select": {
+                                "type": "point",
+                                "fields": [
+                                    "daynight"
+                                ]
+                            },
+                            "bind": "legend"
+                        }
+                    ],
+                    "title": "Amount of fire recorded per day in January 2020",
+                    "transform": [
+                        {
+                            "filter": {
+                                "param": "legend_selection"
+                            }
+                        }
+                    ],
+                    "encoding": {
+                        "x": {
+                            "field": "acq_date",
+                            "timeUnit": "date",
+                            "axis": {
+                                "title": "Day of January 2020"
+                            }
+                        },
+                        "y": {
+                            "aggregate": "count",
+                            "axis": {
+                                "tickCount": 5,
+                                "grid": false
+                            },
+                            "title": "Count"
+                        },
+                        "color": {
+                            "field": "daynight",
+                            "type": "nominal",
+                            "scale": {
+                                "domain": [
+                                    "D",
+                                    "N"
+                                ],
+                                "range": [
+                                    "#e7ba52",
+                                    "#c7c7c7"
+                                ]
+                            },
+                            "title": "Daytime or Nighttime fire"
+                        },
+                        "tooltip": [
+                            {
+                                "field": "acq_time",
+                                "type": "nominal",
+                                "title": "Acquired Time"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
