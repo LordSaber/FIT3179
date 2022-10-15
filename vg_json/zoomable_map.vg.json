@@ -78,7 +78,7 @@
     },
     "width": 600,
     "height": 550,
-    "title": "NASA FIRMS MODIS Total Near Real-Time Australian Bush Fires (January 2020)",
+    "title": "Interactive Map focusing on areas with peak Fire Radiative Power",
     "layer": [
         {
             "data": {
