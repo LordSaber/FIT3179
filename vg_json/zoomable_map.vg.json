@@ -1,0 +1,158 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/LordSaber/FIT3179/Week-9-Homework/data/fire_nrt_M6_101673.csv"
+    },
+    "params": [
+        {
+            "name": "Fire_Radiative_Above",
+            "value": 0,
+            "bind": {
+                "input": "range",
+                "min": 0,
+                "max": 10000,
+                "step": 200,
+                "name": "Minimum FRP: "
+            }
+        },
+        {
+            "name": "zoom_level",
+            "value": 20000,
+            "bind": {
+                "input": "range",
+                "min": 3500,
+                "max": 60000,
+                "step": 100,
+                "name": "Zoom: "
+            }
+        },
+        {
+            "name": "center_to",
+            "value": [
+                137.3,
+                -35.8
+            ],
+            "bind": {
+                "input": "select",
+                "options": [
+                    [
+                        137.3,
+                        -35.8
+                    ],
+                    [
+                        146.7,
+                        -36.9
+                    ],
+                    [
+                        148.0,
+                        -36.8
+                    ],
+                    [
+                        149.1,
+                        -35.3
+                    ],
+                    [
+                        122.4,
+                        -32.7
+                    ]
+                ],
+                "labels": [
+                    "Kangaroo Island",
+                    "Abbeyard, VIC",
+                    "Cobberas, VIC",
+                    "Canberra, NSW",
+                    "Kalgoorlie, WA"
+                ],
+                "name": "Map Centre: "
+            }
+        }
+    ],
+    "projection": {
+        "type": "equirectangular",
+        "center": {
+            "expr": "center_to"
+        },
+        "scale": {
+            "expr": "zoom_level"
+        }
+    },
+    "width": 600,
+    "height": 550,
+    "title": "NASA FIRMS MODIS Total Near Real-Time Australian Bush Fires (January 2020)",
+    "layer": [
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/LordSaber/FIT3179/main/vg_json/states.json",
+                "format": {
+                    "type": "topojson",
+                    "feature": "states"
+                }
+            },
+            "mark": {
+                "type": "geoshape",
+                "fill": "black",
+                "stroke": "white"
+            }
+        },
+        {
+            "mark": {
+                "type": "circle",
+                "tooltip": {
+                    "content": "data"
+                }
+            },
+            "transform": [
+                {
+                    "filter": "datum.frp > Fire_Radiative_Above"
+                }
+            ],
+            "encoding": {
+                "longitude": {
+                    "field": "longitude",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "latitude",
+                    "type": "quantitative"
+                },
+                "size": {
+                    "field": "frp",
+                    "type": "quantitative",
+                    "title": "Fire Radiative Power"
+                },
+                "color": {
+                    "field": "brightness",
+                    "type": "quantitative",
+                    "title": "Fire Brightness",
+                    "scale": {
+                        "scheme": "reds"
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "latitude",
+                        "type": "quantitative",
+                        "title": "Latitude"
+                    },
+                    {
+                        "field": "longitude",
+                        "type": "quantitative",
+                        "title": "Longitude"
+                    },
+                    {
+                        "field": "frp",
+                        "type": "quantitative",
+                        "title": "Fire Radiative Power (FRP)",
+                        "format": ".2f"
+                    },
+                    {
+                        "field": "brightness",
+                        "type": "quantitative",
+                        "title": "Fire Brightness",
+                        "format": ".2f"
+                    }
+                ]
+            }
+        }
+    ]
+}

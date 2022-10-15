@@ -146,53 +146,28 @@
         </div>
         <!-- end pure grid group -->
 
-        <!-- pure grid group -->
+        <!-- Stacked bar plot -->
         <div class="pure-g">
-            <div class="pure-u-1-2">
-                <div class="description description-right">
-                    <h2>Trends across Genders</h2>
-                    <p>One interesting trend is that bullying rates have decreased across the years in all regions and
-                        genders. Of
-                        note
-                        is that the bullying rate in boys is now 1.9% lower than that in girls, despite starting 2.2%
-                        higher. This
-                        change
-                        occurred between 2010 and 2011. We speculate that this may be due to the popularisation of
-                        social media
-                        around this
-                        time, allowing for different avenues of bullying, such as cyberbullying, to emerge. </p>
-                </div>
-            </div>
-            <div class="pure-u-1-2">
-                <div id="vis2" class="vis-container"></div>
+            <div class="pure-u-1-1">
+                <h2>Kangaroo Island</h2>
+                <div id="vis3" class="vis-container"></div>
             </div>
         </div>
         <!-- end pure grid group -->
 
-        <!-- pure grid group -->
+        <!-- More text -->
         <div class="pure-g">
-            <div class="pure-u-1-2">
-                <div id="vis4" class="vis-container"></div>
-            </div>
-            <div class="pure-u-1-2">
-                <div class="description description-right">
-                    <h2>Melbourne Metro Region</h2>
-                    <p>The Melbourne metropolitan region has generally reported lower bullying rates than across the
-                        state,
-                        despite
-                        having a range of NAPLAN scores (see above). This may be due to a variety of factors as any
-                        factor that
-                        attracts
-                        families to the city could be an explanation. Some possible examples are the parents education
-                        and
-                        profession,
-                        the funding of the school in question, or even the immigration status of students.
-                    </p>
-                    <p>
-                        Within metropolitan Melbourne, KNOX reported the most bullying in 2016 at 22.6%, and Stonnington
-                        the least
-                        at 6%.</p>
-                </div>
+            <div class="pure-u-1-1">
+                <p><small><i>Select either Day Time (D) or Night Time (N) in the Legend to view respective data.
+                        </i></small></p>
+
+                <p>
+                    Here, the correlation is more apparent. The LGAs that
+                    perform better on the NAPLAN tests tend to have less bullying, across all years. This indicates that
+                    children
+                    who
+                    apply themselves at school and/or environments that value education result in less bullying in
+                    class.</p>
             </div>
         </div>
         <!-- end pure grid group -->
@@ -233,10 +208,11 @@
     <script type="text/javascript">
         var specVis1 = "vg_json/bar_chart_daily_fire_January_2020.vg.json";
         var specVis2 = "vg_json/modis_NRT_FRP_January_2020.vg.json";
+        var specVis3 = "vg_json/zoomable_map.vg.json";
 
         vegaEmbed('#vis1', specVis1, { "actions": false });
-
-        vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+        vegaEmbed('#vis2', specVis2, { "actions": false });
+        vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
     </script>
