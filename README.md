@@ -31,7 +31,8 @@ fire_nrt_M6_101673.csv is used from the raw dataset from [Australian Bush fire s
 
 ## Usage
 
-To see the visualisation, please refer [here](https://lordsaber.github.io/FIT3179/). Otherwise, navigate to the files interested for the resources used in the webpage as listed above. 
+To see the visualisation, please refer [here](https://lordsaber.github.io/FIT3179/).
+Otherwise, navigate to the files interested for the resources used in the webpage as listed above.
 
 ## Contributors
 
