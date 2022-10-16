@@ -11,12 +11,12 @@ fire_nrt_M6_101673.csv is used from the raw dataset from [Australian Bush fire s
 
 ## Vega-Lite JSON files (in the directory 'vg_json')
 
-- fire_nrt_M6_101673.json: The TOPOJSON conversion of fire_nrt_M6_101673.csv.
+- fire_nrt_M6_101673.json: The TOPOJSON conversion of the full fire_nrt_M6_101673.csv dataset.
 - states.json: The TOPOJSON file of a map of Australia states.
 - ne_110m.json: The TOPOJSON file of a blank map of Australia.
 - modis_NRT_FRP_January_2020.vg.json: A proportional symbol map showing the total Near Real Time bush fire spread in January 2020.
 - bar_chart_daily_fire_January_2020.vg.json: A stacked bar chart showing the amount of fire recorded per day during daytime and nighttime. 
-- interactive_map.vg.json: A interactive map with the functionalities to filter by Fire Radiative Power, zoom functionality, and selection of key areas.
+- interactive_map.vg.json: An interactive map with the functionalities to filter by Fire Radiative Power, zoom functionality, and selection of key areas.
 
 ## Webpage
 
