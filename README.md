@@ -4,11 +4,7 @@ Homework tasks are separated in individual branches.
 
 The main branch includes the files for Data Visualisation Assignment 2.
 
-Webpage: https://lordsaber.github.io/FIT3179/
-
-# A Visualisation: River Pollution in Malaysia
-
-The webpage contains visualisation of Water Quality Index (WQI) of rivers in Malaysia in the years 2015 to 2017. 
+The webpage contains a visualisation of analysis on the 2019-2020 Australian Bush Fires for the month of January 2020. 
 
 ## Dataset (in the directory 'data')
 fire_nrt_M6_101673.csv is used from the raw dataset from [Australian Bush fire satellite data (NASA)](https://www.kaggle.com/datasets/nagarajbhat/australian-bush-fire-satellite-data-nasa?select=fire_nrt_M6_101673.csv)
