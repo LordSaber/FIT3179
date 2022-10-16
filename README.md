@@ -26,6 +26,7 @@ fire_nrt_M6_101673.csv is used from the raw dataset from [Australian Bush fire s
 ## Dependencies
 
 - [Vega-Lite](https://vega.github.io/vega-lite/)
+- [Mapshaper](https://mapshaper.org/)
 - [Google Fonts](https://fonts.google.com/)
 - [Pure CSS](https://purecss.io/)
 
