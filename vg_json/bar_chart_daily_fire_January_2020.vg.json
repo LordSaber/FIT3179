@@ -22,7 +22,7 @@
                             "bind": "legend"
                         }
                     ],
-                    "title": "Amount of fire recorded per day in January 2020",
+                    "title": "Amount Of Fire Recorded Per Day In January 2020",
                     "transform": [
                         {
                             "filter": {
@@ -55,11 +55,11 @@
                                     "N"
                                 ],
                                 "range": [
-                                    "#e7ba52",
-                                    "#c7c7c7"
+                                    "#e5de00",
+                                    "#00008B"
                                 ]
                             },
-                            "title": "Daytime or Nighttime fire"
+                            "title": "Daytime or Nighttime Fire"
                         },
                         "tooltip": [
                             {

@@ -12,7 +12,7 @@
                 "min": 0,
                 "max": 10000,
                 "step": 200,
-                "name": "Minimum FRP: "
+                "name": "Minimum Fire Radiative Power: "
             }
         },
         {
@@ -78,7 +78,7 @@
     },
     "width": 600,
     "height": 550,
-    "title": "Interactive Map focusing on areas with peak Fire Radiative Power",
+    "title": "Interactive Map Focusing On Areas With The Most Fire Spread",
     "layer": [
         {
             "data": {
